@@ -14,12 +14,34 @@ test('return pages', () => {
   expect(keys).toContain('tests/basic')
 })
 
+test('skip internal docs', () => {
+  expect(keys).not.toContain('_docs/markdown-dialect')
+  expect(keys).not.toContain('_docs/writing-guidelines')
+  expect(keys).not.toContain('AGENTS')
+})
+
 test('frontmatter', () => {
   const page = pages.bash
   expect(page.slug).toEqual('bash')
   expect(typeof page.markdown).toEqual('string')
   expect(typeof page.frontmatter.title).toEqual('string')
   expect(typeof page.frontmatter.keywords).toEqual('object')
+})
+
+test('deprecated frontmatter', () => {
+  const result = mapGlobToPages({
+    old: [
+      '---',
+      'title: Old',
+      'deprecated: true',
+      'deprecated_by: /new',
+      '---',
+      '# hi'
+    ].join('\n')
+  })
+
+  expect(result.old.frontmatter.deprecated).toBe(true)
+  expect(result.old.frontmatter.deprecated_by).toBe('/new')
 })
 
 describe('mapGlobToPages()', () => {
@@ -50,6 +72,31 @@ describe('mapGlobToPages()', () => {
       {
         "101": {
           "frontmatter": {
+            "title": "101",
+          },
+          "markdown": "# hi",
+          "slug": "101",
+        },
+      }
+    `)
+  })
+
+  test('description field', () => {
+    const result = mapGlobToPages({
+      '101': [
+        '---',
+        'title: 101',
+        'description: Custom description',
+        '---',
+        '# hi'
+      ].join('\n')
+    })
+
+    expect(result).toMatchInlineSnapshot(`
+      {
+        "101": {
+          "frontmatter": {
+            "description": "Custom description",
             "title": "101",
           },
           "markdown": "# hi",

@@ -4,10 +4,9 @@ updated: 2019-07-07
 category: API
 ---
 
-## Intro
-
 ## Queries
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Basic query
 
@@ -15,12 +14,13 @@ category: API
 { status }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { status: 'available' }
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ### Nesting
 
@@ -28,14 +28,15 @@ category: API
 { hero { name height } }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { hero:
     { name: "Luke Skywalker",
       height: 1.74 } }
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ### Lists
 
@@ -43,7 +44,7 @@ category: API
 { friends { name } }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { friends:
@@ -51,7 +52,8 @@ category: API
       { name: "Han Solo" },
       { name: "R2D2" } ] }
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 GraphQL queries look the same for both single items or lists of items.
 
@@ -63,14 +65,15 @@ GraphQL queries look the same for both single items or lists of items.
 }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { hero:
     { id: "1000",
     { name: "Luke Skywalker" } }
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ### Aliases
 
@@ -81,7 +84,7 @@ GraphQL queries look the same for both single items or lists of items.
 }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { luke:
@@ -89,7 +92,8 @@ GraphQL queries look the same for both single items or lists of items.
     han:
     { name: "Han Solo" } }
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ### Operation names and variables
 
@@ -122,7 +126,7 @@ Just to make things less ambiguous. Also, to use variables, you need an operatio
 { review: { stars: 5 } }
 ```
 
-#### ↓
+#### Result
 
 ```js
 { createReview: { id: 5291 } }
@@ -168,7 +172,8 @@ fetch('http://myapi/graphql', {
 
 Schema
 ------
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Basic schemas
 
@@ -190,6 +195,8 @@ See: [sogko/graphql-shorthand-notation-cheat-sheet](https://raw.githubuserconten
 
 #### Scalar types
 
+| Type | Description |
+| --- | --- |
 | `Int` | Integer |
 | `Float` | Float |
 | `String` | String |
@@ -198,6 +205,8 @@ See: [sogko/graphql-shorthand-notation-cheat-sheet](https://raw.githubuserconten
 
 #### Type definitions
 
+| Definition | Description |
+| --- | --- |
 | `scalar` | Scalar type |
 | `type` | Object type |
 | `interface` | Interface type |
@@ -207,6 +216,8 @@ See: [sogko/graphql-shorthand-notation-cheat-sheet](https://raw.githubuserconten
 
 #### Type modifiers
 
+| Syntax | Description |
+| --- | --- |
 | `String` | Nullable string |
 | `String!` | Required string |
 | `[String]` | List of strings |
@@ -246,7 +257,8 @@ type Root {
   direction: DIRECTION!
 }
 ```
-{: data-line="1,2,3,4"}
+
+<!-- {: data-line="1,2,3,4"} -->
 
 ### Unions
 
@@ -260,7 +272,8 @@ type Query {
   search(q: String): [Result]
 }
 ```
-{: data-line="4"}
+
+<!-- {: data-line="4"} -->
 
 References
 ----------

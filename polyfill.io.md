@@ -1,6 +1,7 @@
 ---
 title: Polyfill.io
-category: JavaScript libraries
+category: Hidden
+# The domain was hijacked and shut down in the June 2024 supply-chain attack.
 updated: 2024-06-26
 intro: |
   Polyfill.io is a service that serves JavaScript polyfills.
@@ -18,7 +19,7 @@ intro: |
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
 ```
 
-{: .-wrap}
+<!-- {: .-wrap} -->
 
 This is the default script for Polyfill.io.
 

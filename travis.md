@@ -7,7 +7,8 @@ intro: |
 ---
 
 ## Reference
-{:.-three-column}
+
+<!-- {:.-three-column} -->
 
 ### Node.js
 
@@ -108,6 +109,6 @@ gemfile:
 
 ### References
 
-- https://about.travis-ci.org/docs/user/build-configuration/
-- https://about.travis-ci.org/docs/user/languages/javascript-with-nodejs/
-- https://about.travis-ci.org/docs/user/languages/ruby/
+- <https://about.travis-ci.org/docs/user/build-configuration/>
+- <https://about.travis-ci.org/docs/user/languages/javascript-with-nodejs/>
+- <https://about.travis-ci.org/docs/user/languages/ruby/>

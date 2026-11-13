@@ -1,6 +1,7 @@
 ---
 title: Mocha blanket
-category: JavaScript libraries
+category: Hidden
+# Built on blanket.js, which is abandoned (its README points to Istanbul/nyc).
 intro: |
   Use [blanket](https://npmjs.com/package/blanket) for easy coverage reporting for Mocha JavaScript tests.
 ---
@@ -8,7 +9,8 @@ intro: |
 ### Quickstart guide
 
 Install blanket:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```bash
 npm i --save-dev blanket
@@ -48,7 +50,8 @@ npm run coverage
 ### Travis + coveralls.io support
 
 Visit [coveralls.io] then activate your repo. Then install the appropriate packages:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```bash
 npm i --save-dev mocha-lcov-reporter coveralls

@@ -4,6 +4,7 @@ import { getTopPages, getRelatedPages } from '~/lib/page/queries'
 import { etc } from '~/config'
 import RelatedPostItem from '~/components/V2017Sheet/RelatedPostItem.astro'
 import PushButton from '~/components/V2017/PushButton.astro'
+import Icon from '~/components/Icon.astro'
 
 export type Props = {
   page: SheetPage
@@ -49,7 +50,9 @@ const topPages = getTopPages(pages, page, { maxCount: 6 })
       <div class="callout">
         <a class="related-posts-callout" href="/">
           <div class="text">
-            <i class="icon"></i>
+            <i class="icon">
+              <Icon name="ios-arrow-back" size={48} />
+            </i>
             <span class="description">{calloutDescription}</span>
             <PushButton class="-dark">{t.callout.link}</PushButton>
           </div>
@@ -62,11 +65,9 @@ const topPages = getTopPages(pages, page, { maxCount: 6 })
           <h3>{categoryHeading}</h3>
         </div>
         <ul class="related-post-list">
-          {
-            relatedPages.map((page) => (
-              <RelatedPostItem page={page} class="item" />
-            ))
-          }
+          {relatedPages.map((page) => (
+            <RelatedPostItem page={page} class="item" />
+          ))}
         </ul>
       </div>
 
@@ -76,18 +77,19 @@ const topPages = getTopPages(pages, page, { maxCount: 6 })
           <h3>{t.group.top}</h3>
         </div>
         <ul class="related-post-list">
-          {topPages.map((page) => <RelatedPostItem page={page} class="item" />)}
+          {topPages.map((page) => (
+            <RelatedPostItem page={page} class="item" />
+          ))}
         </ul>
       </div>
     </div>
   </div>
 </footer>
 
-<style lang="scss" is:global>
-  @import '../../sass/2017/utils';
-  @import '../../sass/2017/components/related-posts-area';
-  @import '../../sass/2017/components/related-posts-callout';
-  @import '../../sass/2017/components/related-posts-group';
-  @import '../../sass/2017/components/related-posts-section';
-  @import '../../sass/2017/components/related-post-list';
+<style is:global>
+  @import '../../styles/components/related-posts-area.css';
+  @import '../../styles/components/related-posts-callout.css';
+  @import '../../styles/components/related-posts-group.css';
+  @import '../../styles/components/related-posts-section.css';
+  @import '../../styles/components/related-post-list.css';
 </style>

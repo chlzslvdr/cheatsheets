@@ -25,17 +25,27 @@ test('homepage', async ({ page }) => {
     'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevhints.io%2F'
   )
 
-  const shareOnTwitter = page.getByLabel('Share on Twitter')
-  const twitterHref = await shareOnTwitter.getAttribute('href')
-  expect(twitterHref).toEqual(
-    'https://twitter.com/intent/tweet?text=Ridiculous%20collection%20of%20web%20development%20cheatsheets%20https%3A%2F%2Fdevhints.io%2F'
+  const shareOnX = page.getByLabel('Share on X')
+  const xHref = await shareOnX.getAttribute('href')
+  expect(xHref).toEqual(
+    'https://x.com/intent/post?text=Ridiculous%20collection%20of%20web%20development%20cheatsheets%20https%3A%2F%2Fdevhints.io%2F'
   )
 })
 
 test('search', async ({ page }) => {
-  await page.goto('/')
-  await page.getByPlaceholder('Search...').click()
-  await page.getByPlaceholder('Search...').fill('es6')
+  test.setTimeout(120_000)
+
+  const input = page.getByPlaceholder('Search...')
+
+  // The search widget attaches asynchronously (after an IntersectionObserver
+  // and a dynamic import), and marks the input as a combobox when ready.
+  // If the dev server is slow to serve the module, navigate afresh and retry.
+  await expect(async () => {
+    await page.goto('/')
+    await expect(input).toHaveAttribute('role', 'combobox', { timeout: 10_000 })
+  }).toPass({ timeout: 90_000 })
+
+  await input.fill('es6')
 
   // Pick the first
   await page.getByRole('option', { name: 'ES2015+' }).click()
@@ -85,10 +95,10 @@ test('/knex', async ({ page }) => {
     'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevhints.io%2Fknex'
   )
 
-  const shareOnTwitter = page.getByLabel('Share on Twitter')
-  const twitterHref = await shareOnTwitter.getAttribute('href')
-  expect(twitterHref).toEqual(
-    'https://twitter.com/intent/tweet?text=The%20ultimate%20cheatsheet%20for%20Knex%20https%3A%2F%2Fdevhints.io%2Fknex'
+  const shareOnX = page.getByLabel('Share on X')
+  const xHref = await shareOnX.getAttribute('href')
+  expect(xHref).toEqual(
+    'https://x.com/intent/post?text=The%20ultimate%20cheatsheet%20for%20Knex%20https%3A%2F%2Fdevhints.io%2Fknex'
   )
 })
 

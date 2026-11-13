@@ -1,5 +1,6 @@
 ---
 import SearchForm from './SearchForm.astro'
+import Icon from '~/components/Icon.astro'
 ---
 
 <footer class="search-footer" data-js-no-preview>
@@ -9,14 +10,17 @@ import SearchForm from './SearchForm.astro'
         <SearchForm class="-small" />
       </div>
       <div class="links">
-        <a class="home-button" href="/"><i></i></a>
+        <a class="home-button" href="/">
+          <i>
+            <Icon name="ios-home-outline" size={24} />
+          </i>
+        </a>
       </div>
     </div>
   </div>
 </footer>
 
-<style lang="scss" is:global>
-  @import '../../sass/2017/utils';
-  @import '../../sass/2017/components/home-button';
-  @import '../../sass/2017/components/search-footer';
+<style is:global>
+  @import '../../styles/components/home-button.css';
+  @import '../../styles/components/search-footer.css';
 </style>

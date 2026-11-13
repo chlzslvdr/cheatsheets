@@ -4,7 +4,8 @@ category: Ruby
 ---
 
 ### About
-{: .-intro}
+
+<!-- {: .-intro} -->
 
 RSpec is a Ruby library for testing.
 
@@ -195,7 +196,7 @@ expect(die).to receive(:roll)
   .at_most(n).times
 ```
 
-https://relishapp.com/rspec/rspec-mocks/docs
+<https://relishapp.com/rspec/rspec-mocks/docs>
 
 ## Spec helpers
 

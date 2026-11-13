@@ -41,7 +41,8 @@ gpg --import key.asc --import-options merge-only
 ### Managing your keyring
 
 Generate a new key:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```bash
 gpg --gen-key
@@ -67,7 +68,8 @@ gpg --list-secret-keys
 ### Using a keyserver
 
 Import keys from keyserver:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```bash
 gpg --receive-keys <KEY IDS>
@@ -111,7 +113,8 @@ __NOTE:__ You can use the owner's email or name (or part thereof) instead of the
 
 Encrypting
 ---------
-{: .-two-column}
+
+<!-- {: .-two-column} -->
 
 ### Public key encryption
 This will produce an encrypted file, `secret.txt.gpg`, that can only be decrypted by the recipient:
@@ -148,7 +151,8 @@ gpg -c secret.txt
 
 Decrypting
 ---------
-{: .-one-column}
+
+<!-- {: .-one-column} -->
 
 ### Decrypting a file
 
@@ -162,7 +166,8 @@ __NOTE__: Omitting `-o|--output` will print the unencrypted contents to `stdout`
 
 Signing & Verifying
 ---------
-{: .-two-column}
+
+<!-- {: .-two-column} -->
 
 ### Signing
 
@@ -191,12 +196,14 @@ gpg -d signed-file.txt.gpg
 
 Miscellaneous
 ----------
-{: .-two-column}
+
+<!-- {: .-two-column} -->
 
 ### Components
 
 List all components:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```bash
 gpgconf --list-components
@@ -224,20 +231,24 @@ gpg -k --with-colons
 Field Quick Reference:
 
 | Field # | Description |
+| --- | --- |
 | 1       | Record type |
 | 2       | Validity |
 | 3       | Key length in bits |
+| --- | --- |
 | 4       | Public key algorithm |
 | 5       | Key ID |
 | 6       | Creation date |
 | 7       | Expiry date |
 | 8       | Certificate S/N, UID hash, trust signature info |
 | 9       | Ownertrust |
+| --- | --- |
 | 10      | User ID |
 | 11      | Signature class |
 | 12      | Key capabilities |
 | 13      | Issuer fingerprint |
 | 14      | Flag field |
+| --- | --- |
 | 15      | S/N of token |
 | 16      | Hash algorithm |
 | 17      | Curve name |

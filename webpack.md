@@ -27,6 +27,8 @@ module.exports = {
 npm install --save-dev webpack
 ```
 
+| Command | Description |
+| --- | --- |
 | `webpack` | build
 | `webpack -- -p` | build production
 | `webpack -- --watch` | compile continuously
@@ -49,7 +51,8 @@ module.exports = {
   }
 }
 ```
-{: data-line="2,3,4,8"}
+
+<!-- {: data-line="2,3,4,8"} -->
 
 This creates `app.js` and `vendor.js`.
 
@@ -83,7 +86,8 @@ module.exports = {
   }
 }
 ```
-{: data-line="3,4,5,6,7,8"}
+
+<!-- {: data-line="3,4,5,6,7,8"} -->
 
 #### .babelrc
 
@@ -123,7 +127,8 @@ module.exports = {
   }
 }
 ```
-{: data-line="3,4,5,6,7,8,9"}
+
+<!-- {: data-line="3,4,5,6,7,8,9"} -->
 
 #### Your JavaScript
 
@@ -158,7 +163,8 @@ npm install --save-dev \
     { loader: 'postcss-loader' }
 ···
 ```
-{: data-line="8"}
+
+<!-- {: data-line="8"} -->
 
 #### postcss.config.js
 
@@ -169,7 +175,8 @@ module.exports = {
   ]
 }
 ```
-{: data-line="3"}
+
+<!-- {: data-line="3"} -->
 
 This example adds [postcss-cssnext](https://www.npmjs.com/package/postcss-cssnext) support to your CSS files.
 
@@ -186,7 +193,8 @@ This example adds [postcss-cssnext](https://www.npmjs.com/package/postcss-cssnex
   }
 }
 ```
-{: data-line="3"}
+
+<!-- {: data-line="3"} -->
 
 #### Terminal
 

@@ -5,9 +5,10 @@ title: Saucelabs
 ### Getting started
 
 Sign up for opensauce:
-{: .-setup}
 
-- http://saucelabs.com/opensauce
+<!-- {: .-setup} -->
+
+- <http://saucelabs.com/opensauce>
 
 Install [zuul](https://npmjs.com/package/zuul):
 

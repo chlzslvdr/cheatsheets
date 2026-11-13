@@ -15,7 +15,8 @@ intro: |
 ---
 
 ## Basics
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Basics
 
@@ -35,6 +36,7 @@ intro: |
 | `ctrl+a n`      | Go to the next screen tab                                                                |
 | `ctrl+a p`      | Go to the previous screen tab                                                            |
 | `ctrl+a k`      | Kill current screen tab                                                                  |
+| `ctrl+a Esc`    | Enter scrollback mode (PgUp/PgDn or arrows to scroll)                                   |
 
 ### Visual pleasure
 

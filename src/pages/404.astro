@@ -32,14 +32,14 @@ const headingStyles = {
       <SearchForm isLive />
       <div class="mt-8"></div>
       <p class="text-center">
-        <a class="push-button" href="/">{t.goHome}</a>
+        <a class="push-button" href="/">
+          {t.goHome}
+        </a>
       </p>
     </div>
   </div>
 </BaseLayout>
 
-<style lang="scss" is:global>
-  @import '../sass/2017/utils';
-  @import '../sass/2017/placeholders/push-button';
-  @import '../sass/2017/components/push-button';
+<style is:global>
+  @import '../styles/components/push-button.css';
 </style>

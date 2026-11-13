@@ -1,10 +1,12 @@
 ---
 title: Flashlight
-category: Apps
+category: Hidden
+# Discontinued; broken on macOS Big Sur+ after Apple changed the Spotlight API.
 ---
 
 ## Commands
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Events and reminders
 

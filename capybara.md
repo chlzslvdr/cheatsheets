@@ -3,12 +3,13 @@ title: Capybara
 category: Ruby libraries
 weight: -5
 updated: 2020-06-13
-tags: [Featurable]
 ---
 
 ### Navigating
 
-    visit articles_path
+```
+visit articles_path
+```
 
 ### Clicking links and buttons
 
@@ -62,7 +63,8 @@ page.has_css?('.button')
 expect(page).to have_css('.button')
 page.should have_css('.button')
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 | Positive                          | Negative               |
 | ---                               | ---                    |
@@ -83,7 +85,8 @@ page.should have_css('.button')
 | `has_table?` _(selector)_         | `has_no_table?`        |
 | ---                               | ---                    |
 | `has_select?` _(selector)_        | `has_no_select?`       |
-{: .-headers.-left-align}
+
+<!-- {: .-headers.-left-align} -->
 
 In Rspec, these also map to matchers like `page.should have_content`.
 
@@ -134,7 +137,8 @@ The two above statements are functionally equivalent.
 ```ruby
 expect(page).to \
 ```
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```ruby
   have_current_path(expected_path)
@@ -169,7 +173,8 @@ expect(page).to \
 ### Common options
 
 All matchers have these options:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```ruby
   text: 'welcome'
@@ -256,8 +261,10 @@ end
 
 ### Misc
 
-    drag
-    field_labeled
+```
+drag
+field_labeled
+```
 
 ### Page object
 
@@ -296,7 +303,8 @@ end
 ### Debugging
 
 Enable `inspector: true` and then:
-{: .-setup}
+
+<!-- {: .-setup} -->
 
 ```ruby
 page.driver.debug
@@ -331,7 +339,8 @@ page.set_rack_session(foo: 'bar')
 ```
 
 ## See also
-{: .-one-column}
+
+<!-- {: .-one-column} -->
 
 - <https://rubydoc.info/github/jnicklas/capybara/Capybara/RSpecMatchers>
 - <https://www.rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Matchers>

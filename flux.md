@@ -1,12 +1,14 @@
 ---
 title: Flux architecture
-category: React
+category: Hidden
+# The Flux library was archived by Facebook in 2023; docs recommend migrating to Redux.
 ---
 
 ## About
 
 ### About
-{: .-intro}
+
+<!-- {: .-intro} -->
 
 Flux is an architecture for building client-side web applications.
 

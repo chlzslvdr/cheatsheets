@@ -11,7 +11,8 @@ intro: |
 
 Expressions
 ----------
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Expressions
 
@@ -36,7 +37,8 @@ See: [Delimiters](https://vuejs.org/v2/api/#delimiters)
 ```html
 <a :href="url">...</a>
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 #### True or false will add or remove attribute
 ```html
@@ -95,7 +97,8 @@ See: [Directives](https://vuejs.org/v2/api/#Directives)
 ```html
 <button @click="addToCart">...
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 #### Arguments can be passed
 ```html
@@ -138,7 +141,8 @@ See: [Events](https://vuejs.org/v2/guide/events.html)
   {{ item }}
 </li>
 ```
-{: data-line="2"}
+
+<!-- {: data-line="2"} -->
 
 #### To access the position in the array
 ```html
@@ -207,7 +211,8 @@ Vue.component('my-component', {
   // Can also use backticks in `template` for multi-line
 })
 ```
-{: data-line="3, 8, 16, 21, 28, 34, 39"}
+
+<!-- {: data-line="3, 8, 16, 21, 28, 34, 39"} -->
 
 See: [Components Basics](https://vuejs.org/v2/guide/components.html)
 
@@ -219,8 +224,10 @@ See: [Components Basics](https://vuejs.org/v2/guide/components.html)
 | `created` | After the instance is created [#](https://vuejs.org/v2/api/#created) |
 | `beforeMount` | Before the first render [#](https://vuejs.org/v2/api/#beforeMount) |
 | `mounted` | After the instance has been mounted [#](https://vuejs.org/v2/api/#mounted) |
+| --- | --- |
 | `beforeUpdate` | When data changes, before the DOM is patched [#](https://vuejs.org/v2/api/#beforeUpdate) |
 | `updated` | After a data change [#](https://vuejs.org/v2/api/#updated) |
+| --- | --- |
 | `beforeDestroy` | Before the instance is destroyed [#](https://vuejs.org/v2/api/#beforeDestroy) |
 | `destroyed` | After a Vue instance has been destroyed [#](https://vuejs.org/v2/api/#destroyed) |
 
@@ -307,7 +314,8 @@ Slots
   </slot>
 </div>
 ```
-{: data-line="3,4,5"}
+
+<!-- {: data-line="3,4,5"} -->
 
 #### Use of component with data for slot
 ```html
@@ -315,7 +323,8 @@ Slots
   <p>This will go in the slot</p>
 </my-component>
 ```
-{: data-line="2"}
+
+<!-- {: data-line="2"} -->
 
 See: [Slots](https://vuejs.org/v2/guide/components-slots.html)
 
@@ -335,7 +344,8 @@ See: [Slots](https://vuejs.org/v2/guide/components-slots.html)
   </footer>
 </div>
 ```
-{: data-line="3,6,9"}
+
+<!-- {: data-line="3,6,9"} -->
 
 #### Use of component with data for slots
 ```html
@@ -345,7 +355,8 @@ See: [Slots](https://vuejs.org/v2/guide/components-slots.html)
   <p slot="footer">Contact info</p>
 </app-layout>
 ```
-{: data-line="2,3,4"}
+
+<!-- {: data-line="2,3,4"} -->
 
 See: [Slots](https://vuejs.org/v2/guide/components-slots.html)
 

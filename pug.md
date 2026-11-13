@@ -4,14 +4,15 @@ category: JavaScript libraries
 prism_languages: [jade]
 updated: 2017-10-30
 weight: -3
-tags: [Featurable]
 ---
 
 ## Pug
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Basic document
-{: .-prime}
+
+<!-- {: .-prime} -->
 
 ```jade
 doctype html
@@ -128,7 +129,8 @@ p.
   This is text that doesn't need to
   be prefixed by pipes.
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 ```jade
 script.
@@ -136,7 +138,8 @@ script.
   // JavaScript and stuff
   alert('hello')
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 ### Conditionals
 
@@ -146,12 +149,14 @@ if authenticated
 else
   a(href='/login') Sign in
 ```
-{: data-line="1,3"}
+
+<!-- {: data-line="1,3"} -->
 
 See: [Conditionals](https://pugjs.org/language/conditionals.html)
 
 ## Mixins
-{: .-three-column}
+
+<!-- {: .-three-column} -->
 
 ### Mixins
 
@@ -160,7 +165,8 @@ mixin list
   ul
     ···
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 ```jade
 +list
@@ -175,7 +181,8 @@ See: [Mixins](https://pugjs.org/language/mixins.html)
 mixin pet(name)
   span.pet= name
 ```
-{: data-line="1"}
+
+<!-- {: data-line="1"} -->
 
 ```jade
 +pet('cat')
@@ -191,7 +198,8 @@ mixin article(title)
     h2.title= title
     block
 ```
-{: data-line="1,4"}
+
+<!-- {: data-line="1,4"} -->
 
 ```jade
 +article('hello there')

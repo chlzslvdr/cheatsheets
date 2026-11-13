@@ -54,21 +54,17 @@ view.stopListening()
     * `remove` (model, collection, options)
     * `reset` (collection, options)
     * `sort` (collection, options)
-
   * Model:
     * `change` (model, options)
     * `change:[attr]` (model, value, options)
     * `destroy` (model, collection, options)
     * `error` (model, xhr, options)
-
   * Model and collection:
     * `request` (model, xhr, options)
     * `sync` (model, resp, options)
-
   * Router:
     * `route:[name]` (params)
     * `route` (router, route, params)
-
 ## Views
 
 ### Defining
@@ -227,7 +223,8 @@ var Model = Backbone.Model.extend({
   }
 })
 ```
-{: data-line="2"}
+
+<!-- {: data-line="2"} -->
 
 ```js
 obj.validationError  //=> "Can't end before it starts"
@@ -263,7 +260,8 @@ var obj = new Model({ urlRoot: ··· })
 ```
 
 ## References
-{: .-one-column}
+
+<!-- {: .-one-column} -->
 
 - [Backbone website](http://backbonejs.org/) _(backbonejs.org)_
 - [Backbone patterns](http://ricostacruz.com/backbone-patterns/) _(ricostacruz.com)_

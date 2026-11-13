@@ -1,7 +1,8 @@
 ---
+import '~/styles/tailwind.css'
 import 'hint.css'
-import '~/sass/full.scss'
-import '~/sass/2017/base/prism_line_highlight.scss'
+import '~/styles/base.css'
+import '~/styles/prism-line-highlight.css'
 
 import '@fontsource/cousine/400.css'
 import '@fontsource/cousine/700.css'
@@ -27,11 +28,9 @@ const analyticsEnabled = googleAnalytics.enabled
     {/* Title */}
     {props.title ? <title>{props.title}</title> : null}
     {/* Google tag */}
-    {
-      analyticsEnabled && googleAnalytics.measurementId ? (
-        <GoogleAnalytics measurementId={googleAnalytics.measurementId} />
-      ) : null
-    }
+    {analyticsEnabled && googleAnalytics.measurementId ? (
+      <GoogleAnalytics measurementId={googleAnalytics.measurementId} />
+    ) : null}
     <slot name="head" />
   </head>
   <body class={props.bodyClass ?? ''}>
