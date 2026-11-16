@@ -1,11 +1,15 @@
 ---
 title: Heroku
+subtitle: Cloud application hosting platform
 category: Devops
 updated: 2026-10-30
 description: |
   A one-page reference to common Heroku CLI commands.
 intro: |
   [Heroku](https://heroku.com/) is a web hosting platform supporting many languages. This guide is a reference to the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli-commands).
+links:
+  - title: Heroku
+    url: https://www.heroku.com/
 ---
 
 ## Apps

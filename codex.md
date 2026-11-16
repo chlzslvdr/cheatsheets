@@ -1,5 +1,6 @@
 ---
 title: Codex
+subtitle: Terminal coding agent
 category: Agents
 updated: 2026-11-11
 tier: t2
@@ -10,19 +11,15 @@ keywords:
   - Sandbox
   - Approvals
 intro: |
-  [Codex](https://learn.chatgpt.com/docs/codex/cli) is OpenAI's coding agent for the terminal. This reference covers sessions, commands, flags, and configuration.
+  [Codex](https://learn.chatgpt.com/docs/codex/cli) is OpenAI's coding agent for the terminal. This reference covers the most commonly used commands, flags, and settings.
+links:
+  - title: Codex CLI documentation
+    url: https://learn.chatgpt.com/docs/codex/cli
+  - title: GitHub repository
+    url: https://github.com/openai/codex
 ---
 
 ## Getting started
-
-### Introduction
-
-<!-- {: .-intro} -->
-
-[Codex](https://learn.chatgpt.com/docs/codex/cli) is OpenAI's coding agent for the terminal. This reference covers the most commonly used commands, flags, and settings.
-
-- [Codex CLI documentation](https://learn.chatgpt.com/docs/codex/cli) _(learn.chatgpt.com)_
-- [GitHub repository](https://github.com/openai/codex) _(github.com)_
 
 ### Install
 
@@ -30,9 +27,10 @@ intro: |
 curl -fsSL https://chatgpt.com/codex/install.sh | sh   # macOS/Linux
 npm install -g @openai/codex                           # npm
 brew install --cask codex                              # macOS
+irm https://chatgpt.com/codex/install.ps1 | iex        # Windows
 ```
 
-On Windows, run `irm https://chatgpt.com/codex/install.ps1 | iex` in PowerShell. See: [Getting started](https://learn.chatgpt.com/docs/codex/cli#getting-started)
+See: [Getting started](https://learn.chatgpt.com/docs/codex/cli#getting-started)
 
 ### Sign in
 
@@ -148,6 +146,13 @@ See: [Developer commands](https://learn.chatgpt.com/docs/developer-commands?surf
 
 <!-- {: .-prime} -->
 
+```bash
+codex -s workspace-write -a on-request  # Auto
+codex -s read-only -a never             # read-only, no prompts
+```
+
+#### Modes
+
 | Mode                 | Effect                          |
 | -------------------- | ------------------------------- |
 | `read-only`          | Read files; no edits or network |
@@ -155,11 +160,6 @@ See: [Developer commands](https://learn.chatgpt.com/docs/developer-commands?surf
 | `danger-full-access` | No sandbox at all               |
 
 <!-- {: .-shortcuts} -->
-
-```bash
-codex -s workspace-write -a on-request  # Auto
-codex -s read-only -a never             # read-only, no prompts
-```
 
 Auto is the default preset: edits in the workspace, approval to leave it, network off until `sandbox_workspace_write.network_access = true`.
 

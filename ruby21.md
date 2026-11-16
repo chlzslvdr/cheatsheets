@@ -1,10 +1,14 @@
 ---
 title: Ruby 2.1
+subtitle: Ruby 2.1 feature summary
 category: Ruby
 tags: [Archived]
 archived: This sheet covers Ruby 2.1, which reached end of life in 2017.
 intro: |
   Quick reference to the [new features in Ruby 2.1](https://www.ruby-lang.org/).
+links:
+  - title: Ruby 2.1 release notes
+    url: https://www.ruby-lang.org/en/news/2013/12/25/ruby-2-1-0-is-released/
 ---
 
 ### Named arguments with defaults

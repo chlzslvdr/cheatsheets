@@ -1,10 +1,20 @@
 ---
 title: Vue.js
-category: JavaScript
+subtitle: UI framework
+category: Hidden
+# Documents Vue 2, end-of-life 2023-12-31; Vue 3 removed new Vue() and the options here.
+tags: [Archived]
+archived: |
+  This documents Vue 2, which reached end of life on 31 December 2023. Vue 3
+  removed `new Vue()`, `Vue.component()`, and `beforeDestroy`; see the
+  [Vue 3 guide](https://vuejs.org/guide/introduction.html).
 updated: 2019-12-26
 weight: -10
 intro: |
   [Vue.js](https://vuejs.org/) is an open-source Model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.
+links:
+  - title: Vue 2 API
+    url: https://v2.vuejs.org/v2/api/#delimiters
 ---
 
 {%raw%}
@@ -78,6 +88,8 @@ See: [v-bind](https://vuejs.org/v2/api/#v-bind)
 <input v-model="firstName" >
 ```
 
+#### Modifiers
+
 | Method | Description |
 | --- | --- |
 | `v-model.lazy="..."` | Syncs input after change event |
@@ -115,11 +127,6 @@ See: [Directives](https://vuejs.org/v2/api/#Directives)
 <img @mouseover.once="showImage">...
 ```
 
-| Method | Description |
-| --- | --- |
-| `.stop` | Stop all event propagation |
-| `.self ` | Only trigger if event.target is element itself |
-
 #### Keyboard entry example
 ```html
 <input @keyup.enter="submit">
@@ -129,6 +136,13 @@ See: [Directives](https://vuejs.org/v2/api/#Directives)
 ```html
 <input @keyup.ctrl.c="onCopy">
 ```
+
+#### Modifiers
+
+| Method | Description |
+| --- | --- |
+| `.stop` | Stop all event propagation |
+| `.self ` | Only trigger if event.target is element itself |
 
 See: [Events](https://vuejs.org/v2/guide/events.html)
 

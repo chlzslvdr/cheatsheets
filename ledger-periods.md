@@ -1,13 +1,11 @@
 ---
 title: Ledger periods
-category: Ledger
+subtitle: Period expression syntax
+category: Plain-text accounting
+links:
+  - title: https://ledger-cli.org/3.0/doc/ledger3.html#Period-Expressions
+    url: https://ledger-cli.org/3.0/doc/ledger3.html#Period-Expressions
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-- <https://ledger-cli.org/3.0/doc/ledger3.html#Period-Expressions>
 
 ### Usage
 

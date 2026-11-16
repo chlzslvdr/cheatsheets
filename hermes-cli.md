@@ -1,5 +1,6 @@
 ---
 title: Hermes CLI
+subtitle: Terminal AI agent CLI
 category: Agents
 tier: t2
 updated: 2026-11-11
@@ -10,23 +11,17 @@ keywords:
   - Gateway
   - Sessions
 intro: |
-  [Hermes](https://hermes-agent.nousresearch.com/docs/) is Nous Research's
-  AI agent for the terminal. This reference covers setup, chat, models,
-  the gateway, sessions, and slash commands.
+  [Hermes Agent](https://hermes-agent.nousresearch.com/docs/) is Nous Research's AI agent for the terminal. This reference covers the most commonly used commands, flags, and settings.
+links:
+  - title: Hermes documentation
+    url: https://hermes-agent.nousresearch.com/docs/
+  - title: GitHub repository
+    url: https://github.com/nousresearch/hermes-agent
 ---
 
 ## Getting started
 
 <!-- {: .-two-column} -->
-
-### Introduction
-
-<!-- {: .-intro} -->
-
-[Hermes Agent](https://hermes-agent.nousresearch.com/docs/) is Nous Research's AI agent for the terminal. This reference covers the most commonly used commands, flags, and settings.
-
-- [Hermes documentation](https://hermes-agent.nousresearch.com/docs/) _(hermes-agent.nousresearch.com)_
-- [GitHub repository](https://github.com/nousresearch/hermes-agent) _(github.com)_
 
 ### Install
 
@@ -158,15 +153,26 @@ See: [`hermes auth`](https://hermes-agent.nousresearch.com/docs/reference/cli-co
 
 <!-- {: .-shortcuts} -->
 
-On WSL, prefer `gateway run` inside tmux; systemd support is unreliable there.
+See: [`hermes gateway`](https://hermes-agent.nousresearch.com/docs/reference/cli-commands#hermes-gateway)
+
+### WSL
 
 ```bash
 tmux new -s hermes 'hermes gateway run'
 ```
 
+On WSL, prefer `gateway run` inside tmux; systemd support is unreliable there.
+
 See: [`hermes gateway`](https://hermes-agent.nousresearch.com/docs/reference/cli-commands#hermes-gateway)
 
 ### Sessions
+
+```bash
+hermes sessions prune --dry-run
+hermes sessions export sessions.jsonl
+```
+
+#### Subcommands
 
 | Subcommand        | Description                               |
 | ----------------- | ----------------------------------------- |
@@ -184,11 +190,6 @@ See: [`hermes gateway`](https://hermes-agent.nousresearch.com/docs/reference/cli
 <!-- {: .-shortcuts} -->
 
 `prune` defaults to sessions older than 90 days; run it with `--dry-run` first.
-
-```bash
-hermes sessions prune --dry-run
-hermes sessions export sessions.jsonl
-```
 
 See: [`hermes sessions`](https://hermes-agent.nousresearch.com/docs/reference/cli-commands#hermes-sessions)
 

@@ -1,15 +1,20 @@
 ---
 title: Devise
+subtitle: Rails authentication gem
+category: Hidden
+# Documents Devise 1.x on Rails 3; its helpers and before_filter fail on current versions.
+tags: [Archived]
+archived: |
+  This documents Devise 1.x on Rails 3. Its migration helpers,
+  `before_filter`, and `include Devise::TestHelpers` fail on Devise 5 and
+  Rails 7–8. See the [Devise README](https://github.com/heartcombo/devise).
+intro: |
+  [Devise](https://github.com/plataformatec/devise) is a flexible authentication
+  gem.
+links:
+  - title: https://github.com/plataformatec/devise
+    url: https://github.com/plataformatec/devise
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-[Devise](https://github.com/plataformatec/devise) is a flexible authentication
-gem.
-
-- <https://github.com/plataformatec/devise>
 
 ### Installation
 

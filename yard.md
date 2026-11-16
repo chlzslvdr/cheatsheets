@@ -1,8 +1,12 @@
 ---
 title: YARD
+subtitle: Ruby documentation generator
 category: Markup
 intro: |
   Quick reference for YARD tags in Ruby documentation.
+links:
+  - title: YARD documentation
+    url: https://yardoc.org/
 ---
 
 ### Method documentation

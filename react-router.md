@@ -1,13 +1,16 @@
 ---
 title: React-router
-category: React
+subtitle: Routing library for React
+category: Hidden
+# Documents the pre-v4 Router.run/handler API, removed in React Router 4.
+tags: [Archived]
+archived: |
+  This documents the pre-v4 API (`Router.run`, `handler` props), removed in
+  React Router 4. Use the [current docs](https://reactrouter.com/) instead.
+links:
+  - title: https://reactrouter.com/
+    url: https://reactrouter.com/
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-- <https://reactrouter.com/>
 
 {% raw %}
 

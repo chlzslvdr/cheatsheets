@@ -1,9 +1,15 @@
 ---
 title: Qunit
+subtitle: JavaScript test framework
 category: JavaScript libraries
 intro: |
   A quick reference for the [QUnit](https://yarnpkg.com/package/qunit) testing library in JavaScript.
+links:
+  - title: QUnit documentation
+    url: https://qunitjs.com/
 ---
+
+### Basics
 
 ```js
 QUnit.module('a')

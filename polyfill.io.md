@@ -1,10 +1,19 @@
 ---
 title: Polyfill.io
+subtitle: JavaScript polyfill CDN
 category: Hidden
 # The domain was hijacked and shut down in the June 2024 supply-chain attack.
+tags: [Archived]
+archived: |
+  The polyfill.io domain was hijacked and shut down in the June 2024
+  supply-chain attack. Remove references to it; serve polyfills from
+  [cdnjs](https://cdnjs.com/) or bundle them yourself.
 updated: 2024-06-26
 intro: |
   Polyfill.io is a service that serves JavaScript polyfills.
+links:
+  - title: Cloudflare now serves polyfill.io
+    url: https://blog.cloudflare.com/polyfill-io-now-available-on-cdnjs-reduce-your-supply-chain-risk
 ---
 
 ## Usage

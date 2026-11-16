@@ -1,10 +1,14 @@
 ---
 title: Shell.js
+subtitle: Unix commands for Node
 category: JavaScript libraries
 updated: 2017-10-27
 weight: -1
 intro: |
   [ShellJS](https://github.com/shelljs/shelljs) is a portable (Windows/Linux/OS X) implementation of Unix shell commands on top of the Node.js API. 
+links:
+  - title: ShellJS
+    url: https://github.com/shelljs/shelljs
 ---
 
 ### Example

@@ -1,5 +1,6 @@
 ---
 title: rbenv
+subtitle: Ruby version manager
 category: Ruby
 updated: 2018-02-20
 weight: -1
@@ -7,6 +8,9 @@ description: |
   A one-page guide to rbenv Ruby version manager, with usage examples and more.
 intro: |
   [rbenv](https://github.com/rbenv/rbenv) lets you manage installations of multiple Ruby versions.
+links:
+  - title: Installation
+    url: https://github.com/rbenv/rbenv#installation
 ---
 
 ### Installation

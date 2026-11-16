@@ -1,11 +1,15 @@
 ---
 title: Cheatsheet styles
+subtitle: Styling reference for cheatsheets
 tags: [WIP]
 updated: 2017-10-26
 intro: |
   This is a reference of styles that you can use on Devhints cheatsheets. How
   meta!
   You can refer to this when contributing your own cheatsheets to the [GitHub repo](https://github.com/rstacruz/cheatsheets/).
+links:
+  - title: Cheatsheet repository
+    url: https://github.com/rstacruz/cheatsheets/
 ---
 
 Variants

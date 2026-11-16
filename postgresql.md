@@ -1,11 +1,15 @@
 ---
 title: PostgreSQL
+subtitle: Object-relational database system
 category: Databases
 updated: 2026-11-04
 keywords: [psql, postgres, SQL]
 intro: |
   PostgreSQL is an open source object-relational database system. Its
   `psql` client runs SQL and meta-commands from a terminal.
+links:
+  - title: PostgreSQL documentation
+    url: https://www.postgresql.org/docs/
 ---
 
 ### Connecting

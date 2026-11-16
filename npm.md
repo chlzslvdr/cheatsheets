@@ -1,21 +1,20 @@
 ---
 title: npm
+subtitle: Node.js package manager
 category: JavaScript
 weight: -1
 updated: 2026-11-11
 tier: t2
+intro: |
+  [npm](https://docs.npmjs.com/cli/v12/) is the package manager for Node.js. This reference covers everyday commands, package specifiers, and npm 12 defaults.
+links:
+  - title: npm CLI documentation
+    url: https://docs.npmjs.com/cli/v12/
+  - title: package.json reference
+    url: https://docs.npmjs.com/cli/v12/configuring-npm/package-json/
 ---
 
 ## Getting started
-
-### About
-
-<!-- {: .-intro} -->
-
-[npm](https://docs.npmjs.com/cli/v12/) is the package manager for Node.js. This reference covers everyday commands, package specifiers, and npm 12 defaults.
-
-- [npm CLI documentation](https://docs.npmjs.com/cli/v12/)
-- [package.json reference](https://docs.npmjs.com/cli/v12/configuring-npm/package-json/)
 
 ### Install
 

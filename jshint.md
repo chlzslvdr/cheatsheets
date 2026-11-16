@@ -1,16 +1,15 @@
 ---
 title: JSHint
+subtitle: JavaScript linter
 category: JavaScript libraries
 updated: 2026-10-04
 intro: |
   JSHint is configured with inline `/* jshint ... */` directives.
+
+links:
+  - title: JSHint options
+    url: https://jshint.com/docs/options/
 ---
-
-### Introduction
-
-<!-- {: .-intro} -->
-
-- [JSHint options](https://jshint.com/docs/options/) _(jshint.com)_
 
 ### Relaxing
 

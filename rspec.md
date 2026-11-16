@@ -1,15 +1,13 @@
 ---
 title: RSpec
+subtitle: Ruby testing library
 category: Ruby
+intro: |
+  RSpec is a Ruby library for testing.
+links:
+  - title: https://rspec.info/
+    url: https://rspec.info/
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-RSpec is a Ruby library for testing.
-
-- <https://rspec.info/>
 
 ### Invoking tests
 

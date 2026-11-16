@@ -1,5 +1,6 @@
 ---
 title: docker-compose
+subtitle: Multi-container app definition
 category: Devops
 prism_languages: [yaml]
 weight: -1
@@ -11,18 +12,14 @@ keywords:
   - docker compose up
 intro: |
   [Docker Compose](https://docs.docker.com/compose/) defines and runs multi-container applications from a Compose file. This reference covers the Compose file format and CLI.
+links:
+  - title: Compose file reference
+    url: https://docs.docker.com/reference/compose-file/
+  - title: Docker CLI cheatsheet
+    url: "./docker"
 ---
 
 ## Getting started
-
-### About
-
-<!-- {: .-intro} -->
-
-[Docker Compose](https://docs.docker.com/compose/) defines and runs multi-container applications from a Compose file. This reference covers the Compose file format and CLI.
-
-- [Compose file reference](https://docs.docker.com/reference/compose-file/) _(docs.docker.com)_
-- [Docker CLI cheatsheet](./docker) _(devhints.io)_
 
 ### Basic example
 

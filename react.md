@@ -1,5 +1,6 @@
 ---
 title: React.js
+subtitle: UI library
 category: React
 tags: [Featured]
 updated: 2026-11-11
@@ -17,6 +18,9 @@ keywords:
   - createRoot
 intro: |
   [React](https://react.dev/) is a JavaScript library for building user interfaces. This guide targets React 19 (19.0–19.3, function components and hooks).
+links:
+  - title: Installation
+    url: https://react.dev/learn/installation
 ---
 
 {%raw%}

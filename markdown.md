@@ -1,5 +1,6 @@
 ---
 title: Markdown
+subtitle: Plain-text markup format
 category: Markup
 tier: t2
 weight: -1
@@ -12,18 +13,14 @@ keywords:
   - markdown links
 intro: |
   [Markdown](https://commonmark.org/) is a plain-text format for structured documents. This reference covers CommonMark and GFM syntax, from headings to tables and footnotes.
+links:
+  - title: CommonMark specification
+    url: https://spec.commonmark.org/0.31.2/
+  - title: GitHub Flavored Markdown specification
+    url: https://github.github.com/gfm/
 ---
 
 ## Getting started
-
-### About
-
-<!-- {: .-intro} -->
-
-[Markdown](https://commonmark.org/) is a plain-text format for structured documents. This reference covers CommonMark and GFM syntax, from headings to tables and footnotes.
-
-- [CommonMark specification](https://spec.commonmark.org/0.31.2/) _(spec.commonmark.org)_
-- [GitHub Flavored Markdown specification](https://github.github.com/gfm/) _(github.github.com)_
 
 ### Basic example
 

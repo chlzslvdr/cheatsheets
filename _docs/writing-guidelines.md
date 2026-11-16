@@ -7,6 +7,7 @@ Fields and their meanings live in [`src/types/SheetFrontmatter.ts`](https://gith
 ```yaml
 ---
 title: React
+subtitle: UI library
 category: JavaScript libraries
 tags: [Featured]
 updated: 2024-01-01
@@ -14,13 +15,14 @@ updated: 2024-01-01
 ```
 
 - **Category:** must be one of the values in `src/config.ts` `categories`, or `Hidden` to unlist the sheet. Unknown values silently fall into `Others`; `pnpm test` enforces the list.
+- **Subtitle:** one line shown under the title, at most 5 words. It should read naturally after the title: *Python* is a **readable language for scripting**. Sentence case, no leading article, no trailing period. Prefer a concrete noun over a vague one ("CLI argument parser", not "command line tool"). `pnpm test` enforces presence and the word limit.
 
 ## Content organisation
 
 - **Progressive complexity:** Start with basics, move to advanced
 - **Logical sections:** Group related functionality together
 - **H2 and H3:** Organise documents into H2 and H3 sections
-- **Every H2 needs an H3:** an H2 section is one or more H3 cards; a footer that only lists links (`Also see`, `References`) is the exception.
+- **Every H2 needs at least two H3s:** one card renders as a stub; a footer that only lists links (`Also see`, `References`) is the exception.
 - **Most-used first:** order H2s by how often a reader reaches for them; for an interactive tool, keyboard and everyday commands come before reference material.
 
 H2 content length:
@@ -79,11 +81,15 @@ shows the shape.
 - In `.-three-column` sections, maximum is 42 characters
 - Wrap onto more lines rather than exceed the limit
 - Blocks of 5+ lines should add `<!-- {: data-line="…"} -->` after the closing fence to highlight the relevant line(s); skip when nothing is worth highlighting
+- Show the example before its reference table: code block, then an H4 (eg `#### Options`), then the table
+- A table that follows a code block needs an H4 in between, or it reads as part of the block
 
 ## Writing guidelines
 
 - Aim for brevity
-- Paragraphs that follow a code block: 25 words max
+- Prose after the last code block or table in a card: 40 words max; split into another H3 if it needs more
+- Prose comes last in a card: no paragraph may be followed by a code block or table. Fold the note into the block, or split the card
+- Two code blocks in a card need an H4 between them, so each block has a label
 - Table descriptions: keep them short — 8 words max. Prefer parentheticals over separate sentences
 - Sentence case headings, never Title Case
 - Omit explanations if they are obvious
@@ -253,6 +259,8 @@ When an example spans multiple files, use each filename as its H4, one code bloc
 
 ## Archived sheets
 
+See [`archiving.md`](archiving.md) for when a sheet is worth archiving.
+
 - Set `archived: <note>` for an obsolete sheet with no newer version. The note renders as Markdown in a notice.
 - Archived sheets are unlisted like `category: Hidden` and appear on the [archive page](https://devhints.io/archive).
 - `tags: [Archived]` is only a label; set `archived:` to unlist.
@@ -271,19 +279,23 @@ Ensure syntax highlighting languages are part of [PrismJS's supported languages]
 
 ## Introduction
 
-- Introduction H3s are strongly recommended in the first H2.
-- Max 25 words per paragraph.
-- Max 3 links. These should always be reputable, first-party sources as much as possible.
+- Set `intro` frontmatter; it renders as the first card on the sheet.
+- Max 25 words per paragraph, 500 characters in total.
+- Up to 4 `links`, and at least 1 whenever `intro` is set. These should be reputable, first-party sources as much as possible.
+- Link sources (`_(hostname)_`) are inferred from the URL; do not write them.
 
-````
-### Introduction
-<!-- {: .-intro} -->
+```yaml
+intro: |
+  [Claude Code](https://code.claude.com/docs) is Anthropic's AI coding assistant for the terminal. This reference covers the most commonly used commands, flags, and settings.
 
-[Claude Code](https://code.claude.com/docs) is Anthropic's AI coding assistant for the terminal. This reference covers the most commonly used commands, flags, and settings.
+links:
+  - title: Claude Code documentation
+    url: https://code.claude.com/docs
+  - title: GitHub repository
+    url: https://github.com/anthropics/claude-code
+```
 
-- [Claude Code documentation](https://code.claude.com/docs) _(code.claude.com)_
-- [GitHub repository](https://github.com/anthropics/claude-code) _(github.com)_
-````
+The card is generated; never write an `### Introduction` card by hand.
 
 ## Tables: separating
 
@@ -343,7 +355,11 @@ only new ones fail. Regenerate the baselines after cleaning sheets up:
 UPDATE_SHEET_BASELINE=1 pnpm vitest run src/lib/sheetValidation
 ```
 
+Then run `pnpm fmt:format`; oxfmt collapses short baseline arrays to one line.
+
 The `every tiered sheet gives each H3 a link or See` check covers `tier: t1` and `tier: t2` sheets (see [H3 writing guidelines](#h3-writing-guidelines)). The rule is fully enforced; `baseline/seeLinks.json` is empty. H3s from `{% include %}` files are out of scope.
+
+Five shape checks cover every sheet: each H2 needs at least two H3s (`baseline/structure.json`), a table after a code block needs an H4 in between (`baseline/tableIntros.json`), prose after the last block in a card stays under 40 words (`baseline/trailingProse.json`), no paragraph is followed by a block (`baseline/paragraphPlacement.json`), and two code blocks need an H4 between them (`baseline/consecutiveBlocks.json`).
 
 ## SEO descriptions
 

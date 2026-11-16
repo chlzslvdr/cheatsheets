@@ -1,5 +1,6 @@
 ---
 title: AWS S3
+subtitle: Object storage service
 category: Devops
 updated: 2026-11-11
 tier: t2
@@ -12,6 +13,9 @@ keywords:
 intro: |
   `aws s3` is the high-level command set for uploads, downloads, and syncs;
   `aws s3api` is the low-level API for bucket settings and object operations.
+links:
+  - title: aws s3 cp
+    url: https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
 ---
 
 ## Transfers

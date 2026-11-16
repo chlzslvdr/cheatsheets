@@ -276,6 +276,178 @@ test('every sheet separates long tables', async () => {
   ).toEqual([])
 })
 
+/** A table right after a code block needs an H4 intro in between */
+function findTableAfterCode(source: string) {
+  const lines = source.split('\n')
+  const { fenced } = scanFences(lines)
+  const found: Array<{ line: number; text: string }> = []
+  let afterCode = false
+
+  lines.forEach((line, index) => {
+    if (fenced[index]) {
+      afterCode = true
+      return
+    }
+    const text = line.trim()
+    // Blank lines and attribute comments do not end the code block's reach
+    if (text === '' || text.startsWith('<!--')) return
+    if (afterCode && text.startsWith('|')) {
+      found.push({ line: index + 1, text: text.replace(/\s+/g, ' ') })
+    }
+    afterCode = false
+  })
+
+  return found
+}
+
+describe('findTableAfterCode()', () => {
+  const code = ['```fish', 'echo hi', '```']
+
+  test('flags a table right after a code block', () => {
+    const input = [...code, '', '| a | b |', '| --- | --- |'].join('\n')
+    expect(findTableAfterCode(input)).toEqual([{ line: 5, text: '| a | b |' }])
+  })
+
+  test('flags when only an attribute comment separates them', () => {
+    const input = [
+      ...code,
+      '',
+      '<!-- {: .-headers} -->',
+      '',
+      '| a | b |',
+      '| --- | --- |'
+    ].join('\n')
+    expect(findTableAfterCode(input)).toEqual([{ line: 7, text: '| a | b |' }])
+  })
+
+  test('allows prose between', () => {
+    const input = [...code, '', 'Prose.', '', '| a | b |'].join('\n')
+    expect(findTableAfterCode(input)).toEqual([])
+  })
+
+  test('allows an H4 between', () => {
+    const input = [...code, '', '#### Options', '', '| a | b |'].join('\n')
+    expect(findTableAfterCode(input)).toEqual([])
+  })
+
+  test('allows a table before a code block', () => {
+    const input = ['| a | b |', '| --- | --- |', '', ...code].join('\n')
+    expect(findTableAfterCode(input)).toEqual([])
+  })
+
+  test('ignores pipe rows inside a code block', () => {
+    const input = ['```', '| a | b |', '```'].join('\n')
+    expect(findTableAfterCode(input)).toEqual([])
+  })
+})
+
+/** Cards should open with the example, then label the reference table */
+function findCodeAfterTable(source: string) {
+  const tree = unified().use(remarkParse).use(remarkGfm).parse(source)
+  const found: Array<{ line: number; text: string }> = []
+  let section: { hasTable: boolean } | undefined
+
+  for (const node of tree.children) {
+    if (node.type === 'heading' && node.depth <= 3) {
+      section = node.depth === 3 ? { hasTable: false } : undefined
+      continue
+    }
+
+    if (!section) continue
+
+    if (node.type === 'table') {
+      section.hasTable = true
+      continue
+    }
+
+    if (node.type === 'code' && section.hasTable && node.position) {
+      found.push({
+        line: node.position.start.line,
+        text: node.value.split('\n').find((line) => line.trim()) ?? ''
+      })
+    }
+  }
+
+  return found
+}
+
+describe('findCodeAfterTable()', () => {
+  const table = ['| a | b |', '| --- | --- |', '| 1 | 2 |']
+  const code = ['```bash', 'echo hi', '```']
+
+  test('flags a code block after a table', () => {
+    const input = ['## A', '', '### B', '', ...table, '', ...code].join('\n')
+    expect(findCodeAfterTable(input)).toEqual([{ line: 9, text: 'echo hi' }])
+  })
+
+  test('flags even with an H4 between', () => {
+    const input = ['## A', '', '### B', '', ...table, '', '#### X', '', ...code]
+    expect(findCodeAfterTable(input.join('\n'))).toEqual([
+      { line: 11, text: 'echo hi' }
+    ])
+  })
+
+  test('allows a table after a code block', () => {
+    const input = [...code, '', '#### Options', '', ...table].join('\n')
+    expect(findCodeAfterTable(input)).toEqual([])
+  })
+
+  test('allows a table with no code after it', () => {
+    expect(findCodeAfterTable(table.join('\n'))).toEqual([])
+  })
+
+  test('resets after the next H3', () => {
+    const input = ['## A', '', '### B', '', ...table, '', '### C', '', ...code]
+    expect(findCodeAfterTable(input.join('\n'))).toEqual([])
+  })
+})
+
+test('every card shows code before its tables', async () => {
+  const findings: Array<{ slug: string; line: number; text: string }> = []
+  for (const { slug, source } of await sheetSources()) {
+    if (!isSheetSlug(slug)) continue
+    for (const finding of findCodeAfterTable(source)) {
+      findings.push({ slug, ...finding })
+    }
+  }
+
+  const keys = [
+    ...new Set(findings.map(({ slug, text }) => `${slug}#${text}`))
+  ].sort()
+  if (updatingBaseline) return saveBaseline('tableBeforeCode.json', keys)
+
+  const allowed = new Set(loadBaseline<string[]>('tableBeforeCode.json', []))
+  expect(
+    findings.flatMap(({ slug, line, text }) =>
+      allowed.has(`${slug}#${text}`)
+        ? []
+        : [`${slug}:${line}: code after a table (${text})`]
+    )
+  ).toEqual([])
+})
+
+test('every table after a code block is introduced by an H4', async () => {
+  const findings: Array<{ slug: string; line: number; text: string }> = []
+  for (const { slug, source } of await sheetSources()) {
+    if (!isSheetSlug(slug)) continue
+    for (const finding of findTableAfterCode(source)) {
+      findings.push({ slug, ...finding })
+    }
+  }
+
+  const keys = [
+    ...new Set(findings.map(({ slug, text }) => `${slug}#${text}`))
+  ].sort()
+  if (updatingBaseline) return saveBaseline('tableIntros.json', keys)
+
+  const allowed = new Set(loadBaseline<string[]>('tableIntros.json', []))
+  expect(
+    findings.flatMap(({ slug, line, text }) =>
+      allowed.has(`${slug}#${text}`) ? [] : [`${slug}:${line}: ${text}`]
+    )
+  ).toEqual([])
+})
+
 test('every listed sheet gives each table an H3 heading', async () => {
   const findings: string[] = []
   for (const page of Object.values(await getPages()).filter(isListed)) {

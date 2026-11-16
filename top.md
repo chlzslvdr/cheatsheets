@@ -1,8 +1,12 @@
 ---
 title: top
+subtitle: Process monitor
 category: CLI
 updated: 2020-01-01
 intro: See the processes in your Unix machine.
+links:
+  - title: top(1) man page
+    url: https://man7.org/linux/man-pages/man1/top.1.html
 ---
 
 ### Shortcuts

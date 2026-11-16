@@ -1,10 +1,14 @@
 ---
 title: Jest
+subtitle: JavaScript test runner
 category: JavaScript libraries
 updated: 2020-06-17
 weight: -3
 intro: |
   A quick overview to [Jest](https://facebook.github.io/jest/), a test framework for Node.js. This guide targets Jest v20.
+links:
+  - title: Jest documentation
+    url: https://jestjs.io/docs/getting-started
 ---
 
 Testing

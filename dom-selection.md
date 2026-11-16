@@ -1,8 +1,12 @@
 ---
 title: DOM Selection
+subtitle: Text selection API
 category: JavaScript
 intro: |
   Quick introduction to the HTML [DOM selection API](https://devdocs.io/dom/selection).
+links:
+  - title: Selection
+    url: https://developer.mozilla.org/en-US/docs/Web/API/Selection
 ---
 
 ## Reference

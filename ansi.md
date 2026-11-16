@@ -1,8 +1,12 @@
 ---
 title: Ansi codes
+subtitle: ANSI terminal color codes
 category: CLI
 intro: |
   Quick reference to ANSI color codes.
+links:
+  - title: ANSI escape code
+    url: https://en.wikipedia.org/wiki/ANSI_escape_code
 ---
 
 ### Format

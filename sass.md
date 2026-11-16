@@ -1,5 +1,6 @@
 ---
 title: Sass
+subtitle: Mature CSS preprocessor
 category: CSS
 updated: 2020-07-03
 weight: -5
@@ -11,19 +12,16 @@ keywords:
   - "@for @each @while @if @else"
   - "$list: (a b c)"
   - "$map: (a: b, c: d)"
+intro: |
+  This is a quick reference to [Sass stylesheets](https://sass-lang.com).
+links:
+  - title: Sass documentation
+    url: https://sass-lang.com/documentation
 ---
 
 ## Basics
 
 <!-- {: .-three-column} -->
-
-### Introduction
-
-<!-- {: .-intro} -->
-
-This is a quick reference to [Sass stylesheets](https://sass-lang.com).
-
-- [Sass documentation](https://sass-lang.com/documentation) _(sass-lang.com)_
 
 ### Variables
 

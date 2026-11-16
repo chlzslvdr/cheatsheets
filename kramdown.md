@@ -1,15 +1,13 @@
 ---
 title: Kramdown
+subtitle: Ruby Markdown parser
 category: Markup
+intro: |
+  Kramdown is a Markdown parser in Ruby.
+links:
+  - title: https://kramdown.gettalong.org/
+    url: https://kramdown.gettalong.org/
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-Kramdown is a Markdown parser in Ruby.
-
-- <https://kramdown.gettalong.org/>
 
 ### Configuration
 

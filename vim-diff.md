@@ -1,10 +1,14 @@
 ---
 title: Vimdiff
+subtitle: Vim diff comparison mode
 category: Vim
 updated: 2018-12-06
 weight: -10
 intro: |
   [Vim](https://www.vim.org/) is a very efficient text editor. This reference was made for Vim 8.0.
+links:
+  - title: Vim
+    url: https://www.vim.org/
 ---
 
 Getting started

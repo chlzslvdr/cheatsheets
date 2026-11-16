@@ -1,6 +1,13 @@
 ---
 title: expect.js
-category: JavaScript libraries
+subtitle: BDD assertion library
+category: Hidden
+# Documents mjackson/expect, whose spy API Jest dropped. Real expect.js last
+# shipped 0.3.1 in 2014.
+tags: [Archived]
+archived: |
+  The sheet describes `mjackson/expect`, whose spies Jest dropped; the real
+  expect.js last shipped in 2014. Use [Jest's expect](./jest) instead.
 updated: 2017-09-02
 weight: -1
 ---

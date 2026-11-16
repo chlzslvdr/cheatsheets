@@ -1,13 +1,11 @@
 ---
 title: Sinon-chai
+subtitle: Sinon assertions for Chai
 category: JavaScript libraries
+links:
+  - title: Sinon-chai
+    url: https://github.com/domenic/sinon-chai
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-  * [Sinon-chai](https://github.com/domenic/sinon-chai)
 
 ### Initialization
 

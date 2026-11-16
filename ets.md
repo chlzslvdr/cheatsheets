@@ -1,5 +1,6 @@
 ---
 title: Erlang ETS
+subtitle: In-memory key-value store
 category: Elixir
 weight: -1
 ---
@@ -31,6 +32,8 @@ iex> table = :ets.new(:my_table, [:set, :protected])
 ```
 
 <!-- {: .-setup} -->
+
+#### Options
 
 | Flag | Description |
 | --- | --- |

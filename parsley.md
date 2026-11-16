@@ -1,5 +1,6 @@
 ---
 title: Parsley.js
+subtitle: Frontend form validation
 updated: 2018-12-06
 weight: -1
 category: JavaScript libraries
@@ -14,6 +15,9 @@ keywords:
   - errorTemplate
 intro: |
   [Parsley](http://parsleyjs.org/doc/) provides frontend form validation.
+links:
+  - title: Parsley documentation
+    url: https://parsleyjs.org/doc/index.html
 ---
 
 ## Parsley

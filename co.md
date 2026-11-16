@@ -1,11 +1,20 @@
 ---
 title: co
+subtitle: Generator-based async runner
 category: Hidden
 # Superseded by native async/await; last release 4.6.0 (2015).
+tags: [Archived]
+archived: |
+  `co` was superseded by native async/await; its last release was 4.6.0 in
+  2015. See
+  [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
 updated: 2017-10-27
 weight: -1
 intro: |
   [co](https://github.com/tj/co) allows you to use generators to manage async flow.
+links:
+  - title: co
+    url: https://github.com/tj/co
 ---
 
 [co]: https://github.com/tj/co

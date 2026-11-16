@@ -1,9 +1,13 @@
 ---
 title: Travis.yml
+subtitle: Travis CI YAML configuration
 category: Devops
 prism_languages: [yaml]
 intro: |
   Quick reference for [Travis CI](https://travis-ci.org) yaml configuration. See [official documentation](https://docs.travis-ci.com/user/customizing-the-build/).
+links:
+  - title: Travis CI documentation
+    url: https://docs.travis-ci.com/
 ---
 
 ## Reference

@@ -1,7 +1,11 @@
 ---
 title: Apache Cordova
+subtitle: Cross-platform mobile app builder
 intro: |
   A quick reference to common [Apache Cordova](https://cordova.apache.org/) commands.
+links:
+  - title: Apache Cordova
+    url: https://cordova.apache.org/
 ---
 
 ### Common commands

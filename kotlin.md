@@ -1,5 +1,6 @@
 ---
 title: Kotlin
+subtitle: JVM programming language
 category: Java & JVM
 updated: 2026-11-11
 tier: t1
@@ -12,23 +13,17 @@ keywords:
   - Lambdas
 prism_languages: [kotlin]
 intro: |
-  [Kotlin](https://kotlinlang.org/) is a statically typed language
-  targeting the JVM, Android, and multiplatform projects. This reference
-  covers variables, null safety, collections, functions, and classes.
+  [Kotlin](https://kotlinlang.org/) is a statically typed language targeting the JVM, Android, and multiplatform projects. This reference covers the essentials.
+links:
+  - title: Kotlin documentation
+    url: https://kotlinlang.org/docs/home.html
+  - title: Kotlin playground
+    url: https://play.kotlinlang.org/
 ---
 
 ## Variables
 
 <!-- {: .-three-column} -->
-
-### Introduction
-
-<!-- {: .-intro} -->
-
-[Kotlin](https://kotlinlang.org/) is a statically typed language targeting the JVM, Android, and multiplatform projects. This reference covers the essentials.
-
-- [Kotlin documentation](https://kotlinlang.org/docs/home.html) _(kotlinlang.org)_
-- [Kotlin playground](https://play.kotlinlang.org/) _(play.kotlinlang.org)_
 
 ### Mutability
 

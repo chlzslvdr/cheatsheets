@@ -1,9 +1,13 @@
 ---
 title: Ruby
+subtitle: Object-oriented scripting language
 category: Ruby
 tags: [WIP]
 intro: |
   Quick reference to some features of the Ruby programming language.
+links:
+  - title: Ruby documentation
+    url: https://docs.ruby-lang.org/en/
 ---
 
 ### Reference

@@ -1,10 +1,14 @@
 ---
 title: React.js (v0.14)
+subtitle: Legacy React 0.14 API
 category: React
 deprecated: true
 deprecated_by: /react
 intro: |
   This guide targets an old version of React (v0.14). See the [updated React cheatsheet](react) for new versions.
+links:
+  - title: Animations
+    url: https://legacy.reactjs.org/docs/animation.html
 ---
 
 {%raw%}

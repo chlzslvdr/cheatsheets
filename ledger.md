@@ -1,6 +1,7 @@
 ---
 title: Ledger CLI
-category: Ledger
+subtitle: Plain-text accounting tool
+category: Plain-text accounting
 updated: 2020-05-23
 weight: -5
 ---

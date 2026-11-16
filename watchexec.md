@@ -1,5 +1,6 @@
 ---
 title: Watchexec
+subtitle: File watcher command runner
 updated: 2017-10-18
 category: CLI
 weight: -1
@@ -8,6 +9,9 @@ keywords:
   - "watchexec --help"
 intro: |
   [mattgreen/watchexec](https://github.com/mattgreen/watchexec) runs commands whenever certain files change.
+links:
+  - title: mattgreen/watchexec
+    url: https://github.com/mattgreen/watchexec
 ---
 
 ### Installation

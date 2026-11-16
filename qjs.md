@@ -1,15 +1,18 @@
 ---
 title: Q.js
+subtitle: Promise library for JavaScript
 category: Hidden
 # Archived and deprecated in favour of native JavaScript Promises.
+tags: [Archived]
+archived: |
+  Q.js is archived and deprecated in favour of native JavaScript promises.
+  See [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+links:
+  - title: https://github.com/kriskowal/q
+    url: https://github.com/kriskowal/q
+  - title: https://github.com/kriskowal/q/wiki/API-Reference
+    url: https://github.com/kriskowal/q/wiki/API-Reference
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-* <https://github.com/kriskowal/q>
-* <https://github.com/kriskowal/q/wiki/API-Reference>
 
 ### Creating promises (Q.promise)
 

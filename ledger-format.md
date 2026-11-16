@@ -1,6 +1,7 @@
 ---
 title: Ledger format
-category: Ledger
+subtitle: Plain-text accounting format
+category: Plain-text accounting
 ---
 
 ### Example

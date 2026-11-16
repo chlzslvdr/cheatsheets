@@ -1,12 +1,20 @@
 ---
 title: Ronn
+subtitle: Man page generator
 category: Hidden
 # The original gem is defunct (0.7.3, 2010); use the ronn-ng fork.
+tags: [Archived]
+archived: |
+  The original `ronn` gem is defunct (0.7.3, 2010). Use the
+  [ronn-ng](https://github.com/apjanke/ronn-ng) fork instead.
 updated: 2017-10-15
 weight: -1
 prism_languages: [bash, ruby, json, markdown]
 intro: |
   Ronn generates Man pages. See [ronn(1)](https://rtomayko.github.io/ronn/ronn.1.html), [ronn-format(7)](https://rtomayko.github.com/ronn/ronn-format.7.html). Also see it on GitHub: [rtomayko/ronn](httpss://github.com/rtomayko/ronn).
+links:
+  - title: ronn(1)
+    url: https://rtomayko.github.io/ronn/ronn.1.html
 ---
 
 ## Getting started
@@ -119,7 +127,7 @@ markdown(7)
 
 <!-- {: .-one-column} -->
 
-### Sections
+### Structure
 
 - `## SYNOPSIS`
 - `## DESCRIPTION`
@@ -127,6 +135,9 @@ markdown(7)
 - `## SYNTAX`
 - `## ENVIRONMENT`
 - `## RETURN VALUES`
+
+### Reference
+
 - `## STANDARDS`
 - `## SECURITY CONSIDERATIONS`
 - `## BUGS`
@@ -145,6 +156,8 @@ markdown(7)
 --pipe                       # write to stdout
 --server, -S                 # serve in http://localhost:1207
 ```
+
+### Formatting
 
 ```bash
 --html, -5                   # default
@@ -166,6 +179,8 @@ markdown(7)
 
 ## Sections
 
+### Standard sections
+
 | Section | Description                                   |
 | ---     | ---                                           |
 | `1`     | General commands                              |
@@ -174,6 +189,10 @@ markdown(7)
 | ---     | ---                                           |
 | `4`     | Special files (/dev) and drivers              |
 | `5`     | File formats                                  |
+
+### Other sections
+
+| Section | Description                                   |
 | ---     | ---                                           |
 | `6`     | Games                                         |
 | `7`     | Misc                                          |

@@ -1,15 +1,13 @@
 ---
 title: Browsersync
+subtitle: Live-reload dev server
 category: JavaScript libraries
+intro: |
+  `npm i -g browser-sync`
+links:
+  - title: browsersync.io
+    url: https://browsersync.io
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-`npm i -g browser-sync`
-
-* [browsersync.io](https://browsersync.io)
 
 ### Start a server
 

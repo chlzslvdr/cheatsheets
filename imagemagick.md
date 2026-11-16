@@ -1,7 +1,11 @@
 ---
 title: Imagemagick
+subtitle: Image conversion and editing suite
 intro: |
   A quick reference for common [Imagemagick](https://www.imagemagick.org) commands and switches.
+links:
+  - title: Imagemagick
+    url: https://www.imagemagick.org
 ---
 
 ### Common options

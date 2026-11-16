@@ -1,8 +1,12 @@
 ---
 title: RDoc
+subtitle: Ruby documentation markup
 category: Markup
 intro: |
   Quick reference for RDoc markup and directives. For YARD tags such as `@param`, see the YARD cheatsheet.
+links:
+  - title: RDoc documentation
+    url: https://ruby.github.io/rdoc/
 ---
 
 ### Basic comment

@@ -1,6 +1,7 @@
 ---
 title: Ledger queries
-category: Ledger
+subtitle: Query syntax for Ledger
+category: Plain-text accounting
 ---
 
 ### About

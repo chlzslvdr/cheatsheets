@@ -1,23 +1,34 @@
 ---
 title: TypeScript
+subtitle: Typed superset of JavaScript
 category: JavaScript libraries
 tier: t1
 tags: [Featured]
 updated: 2026-11-11
+intro: |
+  TypeScript adds static types to JavaScript; types are erased at build time.
+
+  `tsc` 7 is the native compiler; defaults are `strict`, `module: esnext` and `target: es2025`.
+links:
+  - title: TypeScript Handbook
+    url: https://www.typescriptlang.org/docs/handbook/intro.html
 ---
 
 ## Basics
 
-### About
-<!-- {: .-intro} -->
-
-TypeScript adds static types to JavaScript; types are erased at build time.
-
-`tsc` 7 is the native compiler; defaults are `strict`, `module: esnext` and `target: es2025`.
-
-See: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-
 ### Basic types
+
+```ts
+let tags: string[] = ['a', 'b']
+let pair: [string, number] = ['a', 1]
+
+let id: string | number = 1
+let input: unknown = JSON.parse(json)
+
+function fail(msg: string): never {
+  throw new Error(msg)
+}
+```
 
 #### Primitives
 
@@ -39,18 +50,6 @@ See: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.ht
 | `unknown` | top type; safe `any`, narrow first |
 | `void` | no return value |
 | `never` | bottom type; unreachable |
-
-```ts
-let tags: string[] = ['a', 'b']
-let pair: [string, number] = ['a', 1]
-
-let id: string | number = 1
-let input: unknown = JSON.parse(json)
-
-function fail(msg: string): never {
-  throw new Error(msg)
-}
-```
 
 See: [Everyday types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 

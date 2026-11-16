@@ -1,15 +1,13 @@
 ---
 title: ReStructuredText
+subtitle: ReStructuredText markup language
 category: Markup
+intro: |
+  ReStructuredText is a markup language for writing documents.
+links:
+  - title: https://en.wikipedia.org/wiki/ReStructuredText
+    url: https://en.wikipedia.org/wiki/ReStructuredText
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
-ReStructuredText is a markup language for writing documents.
-
-- <https://en.wikipedia.org/wiki/ReStructuredText>
 
 ### Comments
 

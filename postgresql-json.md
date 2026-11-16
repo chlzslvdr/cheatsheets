@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL JSON
+subtitle: JSON queries and operators
 prism_languages: [sql]
 updated: 2018-12-06
 category: Databases
@@ -15,6 +16,8 @@ SELECT data->>'name' AS name FROM users;
 ```
 
 <!-- {: .-setup} -->
+
+#### Operators
 
 | Operator       | Description                        | Example          | Returns |
 | ----           | ----                               | ----             | ----    |
@@ -39,6 +42,8 @@ SELECT data->tags ? 'admin' AS is_admin FROM users;
 
 <!-- {: .-setup} -->
 
+#### Operators
+
 | Operator      | Description                   | Example                          |
 | ----          | ----                          | ----                             |
 | `?` _str_     | Does `data` have key `name`?  | `data ? 'name'`                  |
@@ -60,6 +65,8 @@ UPDATE users SET tags = tags || array['admin'];
 ```
 
 <!-- {: .-setup} -->
+
+#### Operators
 
 | Operator       |  Example                   |  Description
 | ----           |  ----                      |  ----

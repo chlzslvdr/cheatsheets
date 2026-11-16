@@ -1,17 +1,16 @@
 ---
 title: Angular.js
+subtitle: Legacy single-page app framework
 category: Hidden
 # AngularJS 1.x reached end of life on 2021-12-31.
 tags: [Archived]
 archived: This describes an older version of Angular.
+links:
+  - title: https://github.com/angular/angular-seed
+    url: https://github.com/angular/angular-seed
+  - title: https://angularjs.org/
+    url: https://angularjs.org/
 ---
-
-### About
-
-<!-- {: .-intro} -->
-
- * <https://github.com/angular/angular-seed>
- * <https://angularjs.org/>
 
 ### ng-app
 

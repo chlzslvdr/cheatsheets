@@ -1,11 +1,15 @@
 ---
 title: Layout thrashing
+subtitle: Forced reflow performance issue
 category: HTML
 description: ""
 updated: 2017-10-19
 weight: -1
 intro: |
   These are CSS properties that will cause "layout thrashing". Avoid changing them to prevent bottlenecks in your UI performance.
+links:
+  - title: Layout thrashing
+    url: https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing
 ---
 
 ## Layout thrashing
