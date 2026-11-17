@@ -1,9 +1,24 @@
 ---
 title: mise
 subtitle: Dev tool version manager
-category: CLI
+category: Package managers
 updated: 2026-11-11
 tier: t2
+fragments:
+  - "mise use"
+  - "mise install"
+  - "mise exec"
+  - "mise run"
+  - "mise ls"
+  - "mise outdated"
+  - "mise trust"
+  - "mise env"
+  - "mise.toml"
+  - "node@20"
+  - "mise upgrade"
+  - "mise uninstall"
+  - "mise doctor"
+  - "mise settings"
 keywords:
   - dev tool version manager
   - mise.toml
@@ -29,19 +44,21 @@ links:
 ```bash
 curl -fsSL https://mise.run | sh   # → ~/.local/bin/mise
 brew install mise               # works, installer preferred
+```
 
+```bash
 # Debian/Ubuntu
 sudo apt install -y extrepo
 sudo extrepo enable mise && sudo apt update
 sudo apt install -y mise
+```
 
+```bash
 # installer only: not on PATH until activation
 export PATH="$HOME/.local/bin:$PATH"
 mise --version
 mise doctor                     # diagnose shell/shim problems
 ```
-
-<!-- {: data-line="1"} -->
 
 The installer drops the binary in `~/.local/bin`; activation adds it to `PATH`.
 
@@ -344,8 +361,9 @@ mise settings set --local jobs 2 # project override
 mise settings unset --local jobs
 ```
 
+#### ~/.config/mise/config.toml
+
 ```toml
-# ~/.config/mise/config.toml
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
 trusted_config_paths = ["~/work/trusted"]

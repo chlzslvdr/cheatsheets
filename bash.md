@@ -1,10 +1,25 @@
 ---
 title: Bash scripting
 subtitle: Shell scripting language
-category: CLI
+category: Shell
 tags: [Featured]
 updated: 2026-11-11
 tier: t1
+fragments:
+  - "#!/usr/bin/env"
+  - "set -euo"
+  - "$(pwd)"
+  - "${name}"
+  - "${food:-Cake}"
+  - "[[ -z \"$x\" ]]"
+  - "get_name()"
+  - "while true"
+  - "trap traperr ERR"
+  - "IFS=$'\\n\\t'"
+  - 'name="John"'
+  - 'echo "$name"'
+  - "{A,B}.js"
+  - "${str##*/}"
 keywords:
   - Variables
   - Functions
@@ -975,7 +990,9 @@ Herestring allows a string to be treated as a standard input (stdin). See [Bash 
 while IFS= read -r line; do
   echo "$line"
 done < <(myfunc)
+```
 
+```sh
 # compare content of two folders
 diff <(ls "$dir1") <(ls "$dir2")
 ```

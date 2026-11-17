@@ -1,9 +1,24 @@
 ---
 title: yt-dlp
 subtitle: Command-line video downloader
-category: CLI
+category: Media tools
 updated: 2026-11-16
 tier: t2
+fragments:
+  - "yt-dlp"
+  - "-F"
+  - "-f 137+140"
+  - "-f 22/17/18"
+  - "-P ~/Videos"
+  - "-x"
+  - "--audio-format"
+  - "--embed-subs"
+  - "--embed-metadata"
+  - "--playlist-items"
+  - "--limit-rate"
+  - "--cookies"
+  - "--no-part"
+  - "-S res:1080"
 keywords:
   - video download
   - YouTube

@@ -1,7 +1,7 @@
 ---
 title: Web workers
 subtitle: Browser background threads
-category: JavaScript
+category: Browser APIs
 updated: 2026-11-15
 keywords:
   - Worker
@@ -47,6 +47,8 @@ See: [Worker()](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker)
 | `name` | `''` | Debugger name for the worker scope |
 | `credentials` | `'same-origin'` | Module imports: `'omit'`, `'include'` |
 
+<!-- {: .-headers} -->
+
 `credentials` only applies to module workers; it controls whether imports send cookies.
 
 See: [Worker() options](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker#options)
@@ -73,6 +75,8 @@ See: [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 | Shared | `new SharedWorker(url)` | Many contexts, via `.port` |
 | Service | `navigator.serviceWorker.register(url)` | Pages it controls |
 
+<!-- {: .-headers} -->
+
 This sheet covers dedicated workers. A shared worker talks through a `MessagePort`; a service worker intercepts network requests.
 
 See: [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
@@ -94,8 +98,9 @@ See: [Worker.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Wor
 
 ### Send from the worker
 
+#### worker.js
+
 ```js
-// worker.js
 self.onmessage = ({ data }) => {
   self.postMessage(data.text.split(','))
 }
@@ -114,6 +119,8 @@ See: [DedicatedWorkerGlobalScope.postMessage()](https://developer.mozilla.org/en
 | `source` | `null` for dedicated workers |
 | `ports` | `MessagePort`s transferred with the message |
 | `lastEventId` | `''` for worker messages |
+
+<!-- {: .-headers} -->
 
 Destructure `data` for the payload. `origin` and `source` are empty for dedicated workers; use a `MessageChannel` when you need to identify senders.
 
@@ -170,6 +177,8 @@ See: [Transferable objects](https://developer.mozilla.org/en-US/docs/Web/API/Web
 | `ReadableStream` | Streams, with their locks |
 | `MediaStreamTrack` | One track from a media stream |
 | `RTCDataChannel` | A WebRTC data connection |
+
+<!-- {: .-headers} -->
 
 Plain objects, arrays, and typed arrays are cloned; only these handles move.
 

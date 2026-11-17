@@ -14,8 +14,54 @@ updated: 2024-01-01
 ---
 ```
 
-- **Category:** must be one of the values in `src/config.ts` `categories`, or `Hidden` to unlist the sheet. Unknown values silently fall into `Others`; `pnpm test` enforces the list.
+- **Category:** must be one of the values in `src/config.ts` `categories`, or `Hidden` to unlist the sheet. Unknown values silently fall into `Others`; `pnpm test` enforces the list and the [size limits](#categories).
 - **Subtitle:** one line shown under the title, at most 5 words. It should read naturally after the title: *Python* is a **readable language for scripting**. Sentence case, no leading article, no trailing period. Prefer a concrete noun over a vague one ("CLI argument parser", not "command line tool"). `pnpm test` enforces presence and the word limit.
+
+### Fragments
+
+Every T1 and T2 sheet needs `fragments`: 12–20 short strings shown muted with
+a bottom fade on the sheet's homepage card. They are decoration, not
+documentation.
+
+```yaml
+fragments:
+  - "curl -s"
+  - "-X POST"
+  - "--compressed"
+  - "-H 'X-Foo: bar'"
+  - "-d @file"
+  - "-F file=@path"
+  - "-o file"
+  - "-L"
+  - "-I"
+  - "--http2"
+  - "-O"
+  - "-u user:pass"
+```
+
+- Copy commands, flags, or syntax from the sheet; never add a new command.
+- Keep each fragment to 16 characters or fewer. Mid-token clipping is expected.
+- The first two or three should identify the tool without the title.
+- Mix shapes: commands, flags, values, syntax, codes. Avoid a run of flags.
+- Quote every entry: YAML reads `-X`, `#`, `*` and `:` as syntax.
+- No sentences, Markdown formatting, or trailing punctuation.
+- Keep cards distinct; skip generic `--help`, `install`, `usage`.
+- Order for visual rhythm, not importance.
+
+Non-tiered sheets may omit fragments. `pnpm test` enforces presence and length.
+
+## Categories
+
+A category is a nav group. Its order in `src/config.ts` is the nav order; `Others` stays last.
+
+- **Sizes:** every listed category except `Others` holds 3-16 sheets; `Others` holds at most 12. Hidden, deprecated, and archived sheets don't count.
+- **New sheets:** file under the closest existing category. Don't create a category for one sheet.
+- **New categories:** add one only when at least 3 sheets share it, in nav order in `src/config.ts`. The donor category must stay at 3 or more.
+- **Splitting:** when a category passes 16, split it along a subject line (runtime vs library, language vs tool), not alphabetically. Both sides must stay within 3-16.
+- **Merging:** when a category falls below 3, fold it into its closest parent and remove it from `src/config.ts`.
+- **Others:** a last resort. If it is full, pick the closest category or split one; don't add a new "Misc".
+
+Run `pnpm vitest run src/lib/categories.test.ts` after moving sheets.
 
 ## Content organisation
 
@@ -23,6 +69,7 @@ updated: 2024-01-01
 - **Logical sections:** Group related functionality together
 - **H2 and H3:** Organise documents into H2 and H3 sections
 - **Every H2 needs at least two H3s:** one card renders as a stub; a footer that only lists links (`Also see`, `References`) is the exception.
+- **No H2 preamble:** start every H2 with an H3; intro text belongs in a card.
 - **Most-used first:** order H2s by how often a reader reaches for them; for an interactive tool, keyboard and everyday commands come before reference material.
 
 H2 content length:
@@ -83,13 +130,14 @@ shows the shape.
 - Blocks of 5+ lines should add `<!-- {: data-line="…"} -->` after the closing fence to highlight the relevant line(s); skip when nothing is worth highlighting
 - Show the example before its reference table: code block, then an H4 (eg `#### Options`), then the table
 - A table that follows a code block needs an H4 in between, or it reads as part of the block
+- One example per code block: start a new fence instead of stacking commented examples
 
 ## Writing guidelines
 
 - Aim for brevity
 - Prose after the last code block or table in a card: 40 words max; split into another H3 if it needs more
 - Prose comes last in a card: no paragraph may be followed by a code block or table. Fold the note into the block, or split the card
-- Two code blocks in a card need an H4 between them, so each block has a label
+- Two code blocks in a card need an H4 between them, so each block has a label; a caption-led block is self-labelled, so it needs no H4
 - Table descriptions: keep them short — 8 words max. Prefer parentheticals over separate sentences
 - Sentence case headings, never Title Case
 - Omit explanations if they are obvious
@@ -297,6 +345,20 @@ links:
 
 The card is generated; never write an `### Introduction` card by hand.
 
+## Table headers
+
+Table headers are hidden by default. Add `<!-- {: .-headers} -->` after the
+table when the column labels carry meaning; otherwise leave them out and write
+rows that read on their own.
+
+```md
+| Part | Required |
+| --- | --- |
+| `type` | yes |
+| body | no |
+<!-- {: .-headers} -->
+```
+
 ## Tables: separating
 
 Separating tables is preferred when a table grows to 8 or more rows.
@@ -359,7 +421,7 @@ Then run `pnpm fmt:format`; oxfmt collapses short baseline arrays to one line.
 
 The `every tiered sheet gives each H3 a link or See` check covers `tier: t1` and `tier: t2` sheets (see [H3 writing guidelines](#h3-writing-guidelines)). The rule is fully enforced; `baseline/seeLinks.json` is empty. H3s from `{% include %}` files are out of scope.
 
-Five shape checks cover every sheet: each H2 needs at least two H3s (`baseline/structure.json`), a table after a code block needs an H4 in between (`baseline/tableIntros.json`), prose after the last block in a card stays under 40 words (`baseline/trailingProse.json`), no paragraph is followed by a block (`baseline/paragraphPlacement.json`), and two code blocks need an H4 between them (`baseline/consecutiveBlocks.json`).
+Six shape checks cover every sheet: each H2 needs at least two H3s (`baseline/structure.json`), a table after a code block needs an H4 in between (`baseline/tableIntros.json`), prose after the last block in a card stays under 40 words (`baseline/trailingProse.json`), no paragraph is followed by a block (`baseline/paragraphPlacement.json`), two code blocks need an H4 between them unless caption-led (`baseline/consecutiveBlocks.json`), and a code block holds one commented example (`baseline/multiExampleBlocks.json`).
 
 ## SEO descriptions
 

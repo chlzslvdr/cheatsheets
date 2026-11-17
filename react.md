@@ -1,10 +1,25 @@
 ---
 title: React.js
 subtitle: UI library
-category: React
+category: JavaScript libraries
 tags: [Featured]
 updated: 2026-11-11
 tier: t1
+fragments:
+  - "<App />"
+  - "useState"
+  - "useEffect"
+  - "useReducer"
+  - "useMemo"
+  - "props"
+  - "onClick"
+  - "items.map"
+  - "createRoot"
+  - "<StrictMode>"
+  - "useRef"
+  - "useContext"
+  - "useCallback"
+  - "Suspense"
 weight: -10
 keywords:
   - useState
@@ -470,7 +485,11 @@ Context passes data down without prop drilling and v19 renders `<Context>` itsel
 
 <!-- {: .-two-column} -->
 
-Call hooks at the top level of a component or hook — never in loops, conditions or nested functions. See: [Rules of hooks](https://react.dev/reference/rules/rules-of-hooks)
+### Rules of hooks
+
+Call hooks at the top level of a component or hook — never in loops, conditions or nested functions.
+
+See: [Rules of hooks](https://react.dev/reference/rules/rules-of-hooks)
 
 ### useOnlineStatus
 

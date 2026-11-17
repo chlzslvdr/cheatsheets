@@ -3,6 +3,21 @@ title: Terraform
 subtitle: Infrastructure as code tool
 category: Devops
 tier: t2
+fragments:
+  - "terraform init"
+  - "terraform plan"
+  - "terraform apply"
+  - "terraform fmt"
+  - "terraform import"
+  - "-auto-approve"
+  - "resource"
+  - "variable"
+  - "for_each"
+  - "module"
+  - "locals"
+  - "data"
+  - "count"
+  - "depends_on"
 updated: 2026-11-11
 description: |
   A practical reference for Terraform configuration and CLI workflows.
@@ -555,8 +570,9 @@ See: [Import](https://developer.hashicorp.com/terraform/language/import)
 
 ### Query resources
 
+#### aws.tfquery.hcl
+
 ```hcl
-# aws.tfquery.hcl
 list "aws_instance" "web" {
   provider = aws
 
@@ -670,7 +686,9 @@ See: [Debugging](https://developer.hashicorp.com/terraform/internals/debugging)
 terraform fmt -check -recursive
 terraform init -backend=false -input=false
 terraform validate
+```
 
+```bash
 # Initialize the backend before planning:
 terraform init -input=false
 terraform plan -input=false -no-color -detailed-exitcode
@@ -680,8 +698,9 @@ See: [Automation](https://developer.hashicorp.com/terraform/tutorials/automation
 
 ### Testing
 
+#### tests/web.tftest.hcl
+
 ```hcl
-# tests/web.tftest.hcl
 run "plan" {
   command = plan
 

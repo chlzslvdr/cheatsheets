@@ -1,7 +1,7 @@
 ---
 title: Fish shell
 subtitle: Interactive shell with autosuggestions
-category: CLI
+category: Shell
 prism_languages: [fish]
 updated: 2026-11-14
 weight: -1
@@ -179,7 +179,9 @@ See: [string match](https://fishshell.com/docs/current/cmds/string.html#match-su
 ```fish
 # Replaces the first match
 string replace --regex 'Fish' 'fish' 'Hello from Fish!'
+```
 
+```fish
 # Replaces all matches
 string replace --regex --all 'Fish' 'fish' 'Hello from Fish!'
 ```
@@ -470,8 +472,9 @@ See: [bind](https://fishshell.com/docs/current/cmds/bind.html)
 
 ### Config files
 
+#### ~/.config/fish/config.fish
+
 ```fish
-# ~/.config/fish/config.fish
 set -gx EDITOR nvim
 fish_add_path ~/.local/bin
 ```

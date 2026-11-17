@@ -5,6 +5,21 @@ category: Agents
 tags: [Featured]
 updated: 2026-11-11
 tier: t1
+fragments:
+  - "SKILL.md"
+  - "name:"
+  - "description:"
+  - ".claude/skills/"
+  - ".agents/skills/"
+  - "allowed-tools"
+  - "references/"
+  - "scripts/"
+  - "assets/"
+  - "context: fork"
+  - "license"
+  - "compatibility"
+  - "metadata"
+  - "paths:"
 keywords:
   - SKILL.md
   - agent skills
@@ -103,8 +118,9 @@ See: [Frontmatter reference](https://code.claude.com/docs/en/skills#frontmatter-
 
 ### Codex
 
+#### agents/openai.yaml
+
 ```yaml
-# agents/openai.yaml
 interface:
   display_name: "Release notes"
 policy:

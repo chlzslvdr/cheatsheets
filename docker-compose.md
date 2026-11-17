@@ -6,6 +6,21 @@ prism_languages: [yaml]
 weight: -1
 updated: 2026-11-11
 tier: t1
+fragments:
+  - "compose up"
+  - "compose down"
+  - "compose up -d"
+  - "compose logs -f"
+  - "compose build"
+  - "compose ps"
+  - "compose exec"
+  - "compose config"
+  - "compose pull"
+  - "compose restart"
+  - "compose run"
+  - "compose push"
+  - "compose stop"
+  - "compose watch"
 keywords:
   - docker compose
   - compose file
@@ -23,8 +38,9 @@ links:
 
 ### Basic example
 
+#### compose.yaml
+
 ```yaml
-# compose.yaml
 services:
   web:
     build: .
@@ -456,8 +472,9 @@ See: [extends](https://docs.docker.com/reference/compose-file/services/#extends)
 
 ### Merge overrides
 
+#### compose.override.yaml
+
 ```yaml
-# compose.override.yaml
 services:
   app:
     ports: !override
